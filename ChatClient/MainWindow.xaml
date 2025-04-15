@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatClient"
         mc:Ignorable="d"
-        Title="Чат" Height="500" Width="900">
+        Title="Чат" Height="500" Width="900"
+        Background="#36393F"
+        Foreground="#FFFFFF">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -19,37 +21,40 @@
 
         <!-- Панель подключения -->
         <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Orientation="Horizontal" Margin="5">
-            <TextBox x:Name="UsernameTextBox" Width="120" Margin="0,0,5,0" 
-                     Text="Гость"/>
-            <TextBox x:Name="ServerIpTextBox" Width="100" Margin="0,0,5,0" 
-                     Text="127.0.0.1"/>
-            <TextBox x:Name="ServerPortTextBox" Width="50" Margin="0,0,5,0"
-                     Text="8888"/>
-            <Button x:Name="ConnectButton" Content="Подключиться" 
-                    Click="ConnectButton_Click" Width="100"/>
-            <Button x:Name="DisconnectButton" Content="Отключиться" 
-                    Click="DisconnectButton_Click" Width="100" Margin="5,0,0,0"
-                    IsEnabled="False"/>
+            <TextBox x:Name="UsernameTextBox" Width="120" Margin="0,0,5,0" Text="Гость"
+                     Background="#2F3136" Foreground="#FFFFFF" BorderBrush="#7289DA"/>
+            <TextBox x:Name="ServerIpTextBox" Width="100" Margin="0,0,5,0" Text="127.0.0.1"
+                     Background="#2F3136" Foreground="#FFFFFF" BorderBrush="#7289DA"/>
+            <TextBox x:Name="ServerPortTextBox" Width="50" Margin="0,0,5,0" Text="8888"
+                     Background="#2F3136" Foreground="#FFFFFF" BorderBrush="#7289DA"/>
+            <Button x:Name="ConnectButton" Content="Подключиться" Width="100"
+                    Background="#7289DA" Foreground="#FFFFFF" Click="ConnectButton_Click"/>
+            <Button x:Name="DisconnectButton" Content="Отключиться" Width="100" Margin="5,0,0,0"
+                    Background="#4F545C" Foreground="#FFFFFF" IsEnabled="False" Click="DisconnectButton_Click"/>
         </StackPanel>
 
-        <!-- Список пользователей (левая колонка) -->
-        <GroupBox Grid.Column="0" Grid.Row="1" Header="Участники" Margin="5">
-            <ListBox x:Name="UsersListBox"/>
+        <!-- Список пользователей -->
+        <GroupBox Grid.Column="0" Grid.Row="1" Header="Участники" Margin="5"
+                  Background="#2F3136" Foreground="#FFFFFF" BorderBrush="#7289DA">
+            <ListBox x:Name="UsersListBox" Background="#2F3136" Foreground="#FFFFFF"/>
         </GroupBox>
 
-        <!-- История сообщений (правая колонка) -->
-        <GroupBox Grid.Column="1" Grid.Row="1" Header="Чат" Margin="5">
+        <!-- История сообщений -->
+        <GroupBox Grid.Column="1" Grid.Row="1" Header="Чат" Margin="5"
+                  Background="#2F3136" Foreground="#FFFFFF" BorderBrush="#7289DA">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <TextBlock x:Name="ChatTextBlock" TextWrapping="Wrap" Margin="5"/>
+                <TextBlock x:Name="ChatTextBlock" TextWrapping="Wrap" Margin="5" Foreground="#FFFFFF"/>
             </ScrollViewer>
         </GroupBox>
 
-        <!-- Панель отправки сообщений -->
+        <!-- Отправка сообщений -->
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" Margin="5">
             <TextBox x:Name="MessageTextBox" Width="600" Margin="0,0,5,0"
+                     Background="#2F3136" Foreground="#FFFFFF" BorderBrush="#7289DA"
                      KeyDown="MessageTextBox_KeyDown"/>
-            <Button x:Name="SendButton" Content="Отправить" 
-                    Click="SendButton_Click" Width="100" IsEnabled="False"/>
+            <Button x:Name="SendButton" Content="Отправить" Width="100" 
+                    Background="#5865F2" Foreground="#FFFFFF" IsEnabled="False"
+                    Click="SendButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>
