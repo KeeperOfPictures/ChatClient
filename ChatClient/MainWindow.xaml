@@ -43,7 +43,7 @@
         <GroupBox Grid.Column="1" Grid.Row="1" Header="Чат" Margin="5"
                   Background="#2F3136" Foreground="#FFFFFF" BorderBrush="#7289DA">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <TextBlock x:Name="ChatTextBlock" TextWrapping="Wrap" Margin="5" Foreground="#FFFFFF"/>
+                <TextBlock x:Name="ChatTextBlock" TextWrapping="Wrap" Margin="5" Foreground="#FFFFFF" FontSize="18"/>
             </ScrollViewer>
         </GroupBox>
 
